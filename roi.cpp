@@ -26,6 +26,8 @@ double ROI::currentYearROI(){
 	// calc mean
 	double sum = std::accumulate(v.begin(), v.end(), 0.0);
 	double mean = sum / v.size();
+	annualMean.push_back(mean);
+	
 
 	// create difference vector
 	std::vector<double> diff(v.size());
@@ -38,6 +40,7 @@ double ROI::currentYearROI(){
 
 	// calc sigma
 	double sigma = std::sqrt(sq_sum / v.size());
+	annualSigma.push_back(sigma);
 
 	// calc ROI
 	// inverse cummulative normal distribution
@@ -60,12 +63,12 @@ void ROI::setAmount(double a){
 
 void ROI::simulate(){
 	// reset data
-	if(!(annualROI.empty() || mean.empty() || 
-			sigma.empty() || annualBalance.empty())){
+	if(!(annualROI.empty() || annualMean.empty() || 
+			annualSigma.empty() || annualBalance.empty())){
 		annualROI.clear();
 		annualBalance.clear();
-		mean.clear();
-		sigma.clear();
+		annualMean.clear();
+		annualSigma.clear();
 	}
 
 	for(unsigned int i = 0; i < years; i++){

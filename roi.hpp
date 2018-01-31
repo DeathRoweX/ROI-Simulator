@@ -20,8 +20,8 @@ private:
 
 	std::vector<double> annualROI;
 	std::vector<double> annualBalance;
-	std::vector<double> mean;
-	std::vector<double> sigma;
+	std::vector<double> annualMean;
+	std::vector<double> annualSigma;
 	
 	unsigned int numberOfTrials; // for randomization
 

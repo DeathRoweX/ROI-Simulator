@@ -7,8 +7,7 @@
 #define ROI_CPP
 
 #include "roi.hpp"
-#include <numeric>
-#include <algorithm>
+
 
 ROI::ROI(){
 
@@ -21,14 +20,30 @@ double ROI::currentYearROI(){
 
 	// fill with random values between -15% and 20%
 	std::generate(v.begin(), v.end(), [](){
-		return ((rand() % 20) - 15) / 100;
+		return ((std::rand() % 20) - 15) / 100;
 	});
 
 	// calc mean
+	double sum = std::accumulate(v.begin(), v.end(), 0.0);
+	double mean = sum / v.size();
 
+	// create difference vector
+	std::vector<double> diff(v.size());
+	std::transform(v.begin(), v.end(), diff.begin(), 
+		std::bind2nd(std::minus<double>(), mean));
+
+	// get squared sum
+	double sq_sum = std::inner_product(diff.begin(), 
+		diff.end(), diff.begin(), 0.0);
 
 	// calc sigma
+	double sigma = std::sqrt(sq_sum / v.size());
 
+	// calc ROI
+	// inverse cummulative normal distribution
+	// double roi = norm.inv(rand(), mean, sigma);
+	// double r = ((double)std::rand() / (RAND_MAX)) + 1;
+	// return roi;
 }
 
 double ROI::calcBalance(){

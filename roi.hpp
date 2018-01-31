@@ -7,18 +7,17 @@
 
 #include <cstdlib>
 #include <ctime>
-#include <vectror>
+#include <vector>
 
 class ROI{
 private:
 	unsigned int years;
 	double initialAmount;
-	double endingROI;
 
 	std::vector<double> annualROI;
+	std::vector<double> annualBalance;
 	std::vector<double> mean;
 	std::vector<double> sigma;
-	std::vector<double> annualBalance;
 
 	unsigned int numOfTrials; // for randomization
 

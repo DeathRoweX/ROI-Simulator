@@ -8,6 +8,10 @@
 #include <cstdlib>
 #include <ctime>
 #include <vector>
+#include <numeric>
+#include <algorithm>
+#include <functional>
+#include <cmath>
 
 class ROI{
 private:
@@ -18,8 +22,8 @@ private:
 	std::vector<double> annualBalance;
 	std::vector<double> mean;
 	std::vector<double> sigma;
-
-	unsigned int numOfTrials; // for randomization
+	
+	unsigned int numberOfTrials; // for randomization
 
 	double currentYearROI();
 	double calcBalance();

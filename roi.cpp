@@ -1,6 +1,6 @@
 
 /*
-	ROI Class Declarations
+	ROI Class Definition
 */
 
 #ifndef ROI_CPP

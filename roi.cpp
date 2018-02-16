@@ -20,7 +20,7 @@ double ROI::currentYearROI(){
 
 	// fill with random values between -15% and 20%
 	std::generate(v.begin(), v.end(), [](){
-		return ((std::rand() % 20) - 15) / 100;
+		return ((std::rand() % 35) - 15) / 100;
 	});
 
 	// calc mean

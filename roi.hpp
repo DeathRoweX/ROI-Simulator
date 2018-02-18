@@ -12,6 +12,7 @@
 #include <algorithm>
 #include <functional>
 #include <cmath>
+#include <iostream>
 
 class ROI{
 private:
@@ -20,16 +21,19 @@ private:
 
 	std::vector<double> annualROI;
 	std::vector<double> annualBalance;
-	std::vector<double> annualMean;
-	std::vector<double> annualSigma;
+	std::vector<double> mean;
+	std::vector<double> sigma;
 	
 	unsigned int numberOfTrials; // for randomization
+
+	double finalROI;
 
 	double currentYearROI();
 	double calcBalance();
 
 public:
 	ROI();
+	ROI(unsigned int y, double x);
 	
 	void setYears(unsigned int y);
 	void setAmount(double a);

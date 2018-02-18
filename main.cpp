@@ -1,4 +1,3 @@
-#include <iostream>
 #include "roi.hpp"
 
 // function declarations
@@ -15,17 +14,15 @@ int main(void){
 
 // function definitons
 void getUserInput(ROI &roi){
-	unsigned int totalYears = 0;
+	int totalYears = 0;
 	double initialAmount = 0.00;
-	unsigned int numOfTrials = 100;
 
-	try{
-	// cin totalYears set
-	// cin
+	std::cout << "\nEnter Initial Amount: ";
+	std::cin >> initialAmount;
 
-	} catch {
-
-	}
-
-
+	std::cout << "\nEnter Number of years: ";
+	std::cin >> totalYears;
+	
+	roi.setYears(totalYears);
+	roi.setAmount(initialAmount);
 }

@@ -92,12 +92,12 @@ void ROI::simulate(){
 
 void ROI::display(){
 	std::cout << "\n======= Simulation Details =======";
-	for(unsigned int i = 1; i <= years; i++){
-		std::cout << "\n\nYear " << i << " of " << years;
-		std::cout << "\nMean: " << mean[i-1]; 
-		std::cout << "\nSigma: " << sigma[i-1];
-		std::cout << "\nROI: " << annualROI[i-1];
-		std::cout << "\nAnnual Balance: " << annualBalance[i-1];
+	for(unsigned int i = 0; i < years; i++){
+		std::cout << "\n\nYear " << i+1 << " of " << years;
+		std::cout << "\nMean: " << mean[i]; 
+		std::cout << "\nSigma: " << sigma[i];
+		std::cout << "\nROI: " << annualROI[i];
+		std::cout << "\nAnnual Balance: " << annualBalance[i];
 	}
 	std::cout << "\n\n======= Simulation Summary =======";
 	std::cout << "\nStarting Balance: " << initialAmount;
